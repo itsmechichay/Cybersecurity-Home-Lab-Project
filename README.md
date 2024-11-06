@@ -46,7 +46,7 @@ security concepts, vulnerability assessment, and penetration testing.
     - Hard Disk: 20GB
     - Network Adapter: NAT
 
-![](media/image11.png){width="6.5in" height="3.5277777777777777in"}
+![OS Versions](cshlp_os.png)
 
 3.  Network Configuration
 
@@ -55,16 +55,12 @@ security concepts, vulnerability assessment, and penetration testing.
 4.  Tools Installation
 
     a.  Kali Linux: Nmap, Wireshark
-
-      - Command: ```sudo apt install nmap wireshark```
-
-      ![](media/image13.png){width="3.3958333333333335in" height="3.1041666666666665in"}
+      - Command: ```sudo apt install nmap wireshark```<br>
+	![Kali Tools Installation](cshlp_kali-tools-installation.png)
 
     b.  Ubuntu: Nmap, Wireshark, UFW Firewall
-
-      - Command: ```sudo apt install nmap wireshark ufw```
-
-![](media/image6.png){width="3.6041666666666665in" height="2.9791666666666665in"}
+      - Command: ```sudo apt install nmap wireshark ufw```<br>
+	![Ubuntu Tools Installation](cshlp_ubuntu-tools-installation.png)
 
 - ***Nmap**: discover devices and vulnerabilities on a network*
 - ***Wireshark**: see and analyze network data*
@@ -74,20 +70,18 @@ security concepts, vulnerability assessment, and penetration testing.
 
     a.  Determine IP address of both virtual machines and ping both machines to test connectivity and is reachable over the network
 
-      - Command: ```ifconfig```
+      - Command: ```ifconfig```<br>
+        ![ifconfig command](cshlp_ifconfig-command.png)
 
-        ![](media/image12.png){width="5.661458880139983in" height="3.075696631671041in"}
-
-      - Command: ```ping [target IP]```
-
-        ![](media/image7.png){width="5.682292213473316in" height="3.0648206474190727in"}
+      - Command: ```ping [target IP]```<br>
+        ![ping command](cshlp_ping-command.png)
 
     b.  Use Nmap to scan the Ubuntu VM for open ports and services (Simulated Attack)
 
       - Command: ```nmap -A 192.168.233.133```
         This command performs an aggressive scan on the target address providing detailed information on open ports and services.
 
-        ![](media/image5.png){width="3.5768383639545056in" height="2.141473097112861in"}
+        ![nmap command](cshlp_nmap-command.png)
 
     c.  Configure UFW on the Ubuntu VM to implement basic firewall rules and protect against attacks (Simulated Defense)
 
@@ -95,15 +89,14 @@ security concepts, vulnerability assessment, and penetration testing.
                   ```sudo ufw enable```		activates firewall <br>
 			            ```sudo ufw allow ssh```	allow connections on port 22 <br>
 			            ```sudo ufw allow from [specific IP]```	allow specific traffic or grant access to trusted source <br>
-			            ```sudo ufw status```		display current status and other rules
-
-      ![](media/image4.png){width="4.036094706911636in" height="2.151042213473316in"}
+			            ```sudo ufw status```		display current status and other rules<br>
+      ![ufw](cshlp_ufw.png)
 
 6.  Network Traffic Analysis
 
     a.  Use Wireshark to capture network traffic coming into the Ubuntu VM in the Ethernet. Simulate the Nmap attack again to record on Wireshark
-        ![](media/image1.png){width="3.4826323272090987in" height="3.7653127734033247in"}
-        ![](media/image10.png){width="5.896018153980752in" height="3.2031255468066493in"}
+        ![Wireshark Capture](cshlp_network-interface.png)
+        ![Attack Simulation](cshlp_attack-simulation.png)
 
     b.  Analyze the captured packets to identify attack patterns, vulnerabilities, and successful defense mechanisms.
 
@@ -112,23 +105,23 @@ security concepts, vulnerability assessment, and penetration testing.
 1.  UDP Stream
 
 - During the analysis of a captured UDP stream, a significant amount of repetitive character data was identified. The sequence consists of a long repetition of the letter "C".
-  ![](media/image3.png){width="2.8906255468066493in" height="3.1333497375328085in"}
+  ![UDP stream](cshlp_udp-stream.png)
 
 2.  DNS Stream
 
 - The following string was observed in the DNS traffic. The repetitive structure suggests a DNS query attempting to resolve the IP address back to a host name. Since the IP address is reversed, a reverse DNS lookup was performed using nslookup. However, it resulted in a "No answer".
-  ![](media/image9.png){width="3.0330424321959755in" height="3.2552088801399823in"}
+  ![DNS stream](cshlp_dns-stream.png)
 
 3.  TCP Stream
 
 - Most of the packets captured by wireshark were TCP protocols. As per checking the stream, it does not contain any noteworthy contents.
-  ![](media/image8.png){width="2.7199529746281716in" height="2.9438167104111987in"}
+  ![TCP stream](cshlp_tcp-stream.png)
 
 4.  Other protocols captured were ARP (Address Resolution Protocol), which facilitates local network communications through MAC addresses and ICMP (Internet Control Message Protocol), which aids in diagnosing network issues and errors with regards to packets.
 
 # Network Diagram
 
-![](media/image2.png){width="5.369792213473316in" height="3.73666447944007in"}
+![Network Diagram](cshlp_netwrok-diagram.png)
 
 The diagram shows a home lab environment consisting of a router, a host computer, and two virtual machines.
 
